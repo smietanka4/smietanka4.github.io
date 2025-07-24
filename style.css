@@ -104,30 +104,28 @@ body {
     margin: 0;
   }
   nav ul {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-    width: 100vw;
-    max-width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+    font-size: 0.97rem;
+    padding: 1.1rem 0.2rem 1.1rem 0.2rem;
     box-sizing: border-box;
-    padding: 0.7rem 0 0.7rem 0;
-    margin-left: 0;
-    scrollbar-width: none;
-    position: relative;
-  }
-  nav ul::-webkit-scrollbar {
-    display: none;
+    position: static;
   }
   nav ul li {
-    display: inline-block;
+    display: block;
     flex: none;
   }
   nav ul li a {
-    font-size: 0.97rem;
-    padding: 0.3rem 0.5rem;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.7rem;
   }
   body {
-    padding-top: 56px;
+    padding-top: 70px;
+  }
+  nav ul::-webkit-scrollbar {
+    display: none;
   }
   nav ul::after {
     display: none;
