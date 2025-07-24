@@ -105,6 +105,12 @@ body {
     white-space: nowrap;
     justify-content: flex-start;
     scrollbar-width: none; /* Firefox */
+    max-width: 100vw;
+    width: 100vw;
+    box-sizing: border-box;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
   }
   nav ul::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
@@ -122,6 +128,23 @@ body {
   }
   body {
     padding-top: 56px;
+  }
+  /* Gradient maska po prawej stronie nav ul */
+  nav ul::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 32px;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(
+      to left,
+      rgba(40, 60, 110, 0.55) 60%,
+      transparent 100%
+    );
+    z-index: 2;
+    display: block;
   }
 }
 
