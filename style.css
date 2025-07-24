@@ -3,13 +3,9 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: #e0e7ff;
-  color: #222;
-  letter-spacing: 0.01em;
-  /* Animowany gradient tła, tylko odcienie niebieskiego */
-  background: linear-gradient(120deg, #e0e7ff 0%, #c7d2fe 50%, #60a5fa 100%);
-  background-size: 200% 200%;
-  animation: gradientMove 8s ease-in-out infinite;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="%2360a5fa" fill-opacity="0.35" d="M0,160L60,154.7C120,149,240,139,360,154.7C480,171,600,213,720,197.3C840,181,960,107,1080,101.3C1200,96,1320,160,1380,192L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/><path fill="%232563eb" fill-opacity="0.18" d="M0,224L60,197.3C120,171,240,117,360,117.3C480,117,600,171,720,197.3C840,224,960,224,1080,197.3C1200,171,1320,117,1380,90.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/><path fill="%233b82f6" fill-opacity="0.12" d="M0,288L60,272C120,256,240,224,360,197.3C480,171,600,149,720,160C840,171,960,213,1080,218.7C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/></svg>')
+      center center / cover no-repeat,
+    linear-gradient(to bottom, #c7d2fe 0%, #e0e7ff 100%);
 }
 @keyframes gradientMove {
   0% {
@@ -23,15 +19,91 @@ body {
   }
 }
 nav {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
-  background: rgba(34, 34, 34, 0.7);
-  backdrop-filter: blur(8px);
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(40, 60, 110, 0.55);
+  box-shadow: 0 4px 24px 0 rgba(30, 41, 59, 0.12);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(100, 116, 139, 0.12);
+  animation: navFadeIn 1.1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes navFadeIn {
+  0% {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2rem;
+  padding: 0.8rem 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav ul li a {
+  position: relative;
   color: #fff;
-  padding: 0.5rem 0;
-  box-shadow: 0 2px 12px #0002;
-  transition: background 0.4s;
+  font-weight: 600;
+  font-size: 1.08rem;
+  text-decoration: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 7px;
+  height: 3px;
+  background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.8;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  transform: scaleX(1);
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: rgba(96, 165, 250, 0.18);
+  color: #fff;
+}
+
+/* Dodajemy odstęp na górze strony, by treść nie była pod navem */
+body {
+  padding-top: 64px;
+}
+
+@media (max-width: 700px) {
+  nav ul {
+    gap: 1.1rem;
+    font-size: 0.98rem;
+  }
+  body {
+    padding-top: 56px;
+  }
 }
 nav:hover {
   background: rgba(34, 34, 34, 0.92);
