@@ -29,6 +29,7 @@ nav {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(100, 116, 139, 0.12);
   animation: navFadeIn 1.1s cubic-bezier(0.23, 1, 0.32, 1);
+  height: 64px;
 }
 
 @keyframes navFadeIn {
@@ -102,6 +103,7 @@ body {
     width: 100vw;
     padding: 0;
     margin: 0;
+    height: 70px;
   }
   nav ul {
     display: flex;
