@@ -7,8 +7,34 @@ document.addEventListener("DOMContentLoaded", function () {
       result.textContent =
         "Dziękuję za wiadomość! Skontaktuję się z Tobą wkrótce.";
       form.reset();
+
+      // Automatyczne ukrycie komunikatu po 5 sekundach
+      setTimeout(() => {
+        result.textContent = "";
+      }, 5000);
     });
   }
+
+  // Funkcjonalność FAQ
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
+
+    question.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+
+      // Zamykamy wszystkie inne pytania
+      faqItems.forEach((otherItem) => {
+        otherItem.classList.remove("active");
+      });
+
+      // Otwieramy kliknięte pytanie (jeśli nie było aktywne)
+      if (!isActive) {
+        item.classList.add("active");
+      }
+    });
+  });
 });
 
 // --- Automatyczne podświetlanie aktywnej sekcji w navbarze ---
