@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      AutoFix - Profesjonalny Warsztat Samochodowy | Naprawiamy samochody od 20
+      lat
+    </title>
+    <meta
+      name="description"
+      content="AutoFix - profesjonalny warsztat samochodowy. Naprawiamy samochody od 20 lat. Wymiana opon, klimatyzacja, diagnostyka. Sprawdź nasze realizacje!"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #f8fafc;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: "Poppins", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #93c5fd;
+        transform: translateY(-2px);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80");
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+        margin-top: 70px;
+      }
+
+      .hero-content h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        animation: fadeInUp 1s ease;
+      }
+
+      .hero-content .subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #93c5fd;
+        animation: fadeInUp 1s ease 0.2s both;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        animation: fadeInUp 1s ease 0.4s both;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+        color: white;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        animation: fadeInUp 1s ease 0.6s both;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+      }
+
+      /* Services Section */
+      .services {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .section-title {
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #1e293b;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        border-color: #3b82f6;
+      }
+
+      .service-card i {
+        font-size: 3rem;
+        color: #3b82f6;
+        margin-bottom: 1rem;
+      }
+
+      .service-card h3 {
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 1rem;
+        color: #1e293b;
+      }
+
+      /* Gallery Section */
+      .gallery {
+        padding: 5rem 0;
+        background: #f1f5f9;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .gallery-item {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .gallery-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .gallery-text {
+        padding: 1.5rem;
+      }
+
+      .gallery-text h4 {
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 0.5rem;
+        color: #1e293b;
+      }
+
+      /* Reviews Section */
+      .reviews {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .review-card {
+        background: #f8fafc;
+        padding: 2rem;
+        border-radius: 15px;
+        border-left: 4px solid #3b82f6;
+      }
+
+      .review-stars {
+        color: #fbbf24;
+        margin-bottom: 1rem;
+      }
+
+      .review-text {
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+
+      .review-author {
+        font-weight: 600;
+        color: #1e293b;
+      }
+
+      /* Blog Section */
+      .blog {
+        padding: 5rem 0;
+        background: #f1f5f9;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .blog-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .blog-content {
+        padding: 1.5rem;
+      }
+
+      .blog-date {
+        color: #64748b;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .blog-title {
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 1rem;
+        color: #1e293b;
+      }
+
+      .blog-excerpt {
+        color: #64748b;
+        margin-bottom: 1rem;
+      }
+
+      .read-more {
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .contact-form {
+        background: #f8fafc;
+        padding: 2rem;
+        border-radius: 15px;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #1e293b;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #3b82f6;
+      }
+
+      .submit-btn {
+        background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .contact-item i {
+        font-size: 1.5rem;
+        color: #3b82f6;
+        width: 40px;
+      }
+
+      /* Call to Action */
+      .cta-section {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-section p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .cta-phone {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #93c5fd;
+      }
+
+      /* Footer */
+      footer {
+        background: #1e293b;
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .contact-content {
+          grid-template-columns: 1fr;
+        }
+
+        .services-grid,
+        .gallery-grid,
+        .reviews-grid,
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">AutoFix</div>
+          <ul class="nav-links">
+            <li><a href="#home">Strona główna</a></li>
+            <li><a href="#services">Usługi</a></li>
+            <li><a href="#gallery">Realizacje</a></li>
+            <li><a href="#reviews">Opinie</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>AutoFix</h1>
+          <div class="subtitle">Naprawiamy samochody od 20 lat</div>
+          <p>
+            Profesjonalny warsztat samochodowy z wieloletnim doświadczeniem.
+            Zaufaj ekspertom!
+          </p>
+          <a href="#contact" class="cta-button">Umów wizytę</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title">Nasze Usługi</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-tools"></i>
+            <h3>Naprawy Mechaniczne</h3>
+            <p>
+              Kompleksowe naprawy silników, skrzyń biegów, układów hamulcowych i
+              zawieszenia.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-tire"></i>
+            <h3>Wymiana Opon</h3>
+            <p>
+              Profesjonalna wymiana opon, wyważanie kół i regulacja zbieżności.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-snowflake"></i>
+            <h3>Serwis Klimatyzacji</h3>
+            <p>
+              Naprawa, serwis i napełnianie klimatyzacji. Sprawdzenie
+              szczelności układu.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-laptop"></i>
+            <h3>Diagnostyka Komputerowa</h3>
+            <p>Komputerowa diagnostyka silnika, odczyt i kasowanie błędów.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-oil-can"></i>
+            <h3>Wymiana Olejów</h3>
+            <p>
+              Wymiana oleju silnikowego, filtra oleju i innych płynów
+              eksploatacyjnych.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-car-battery"></i>
+            <h3>Serwis Elektryczny</h3>
+            <p>
+              Naprawa układów elektrycznych, wymiana akumulatorów i
+              alternatorów.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <h2 class="section-title">Nasze Realizacje</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div
+              class="gallery-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="gallery-text">
+              <h4>Naprawa silnika BMW</h4>
+              <p>
+                Kompleksowa naprawa silnika BMW 320d po awarii turbosprężarki
+              </p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div
+              class="gallery-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="gallery-text">
+              <h4>Wymiana sprzęgła</h4>
+              <p>
+                Wymiana sprzęgła w Volkswagen Golf - praca wykonana w jeden
+                dzień
+              </p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div
+              class="gallery-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="gallery-text">
+              <h4>Serwis klimatyzacji</h4>
+              <p>
+                Kompleksowy serwis klimatyzacji w Audi A4 - napełnianie i
+                czyszczenie
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <h2 class="section-title">Opinie Klientów</h2>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="review-text">
+              "Świetny warsztat! Naprawili mi samochód szybko i profesjonalnie.
+              Ceny są uczciwe, a obsługa bardzo miła."
+            </div>
+            <div class="review-author">- Jan Kowalski</div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="review-text">
+              "Polecam wszystkim! Mechanicy są bardzo kompetentni, a warsztat ma
+              nowoczesny sprzęt diagnostyczny."
+            </div>
+            <div class="review-author">- Anna Nowak</div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="review-text">
+              "Jestem klientem od 5 lat i zawsze jestem zadowolony z jakości
+              usług. Polecam!"
+            </div>
+            <div class="review-author">- Piotr Wiśniewski</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+      <div class="container">
+        <h2 class="section-title">Aktualności i Porady</h2>
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div
+              class="blog-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="blog-content">
+              <div class="blog-date">15.01.2024</div>
+              <h3 class="blog-title">Jak dbać o akumulator zimą?</h3>
+              <p class="blog-excerpt">
+                Praktyczne porady dotyczące dbania o akumulator samochodowy w
+                okresie zimowym...
+              </p>
+              <a href="#" class="read-more">Czytaj więcej →</a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div
+              class="blog-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="blog-content">
+              <div class="blog-date">10.01.2024</div>
+              <h3 class="blog-title">Kiedy wymienić olej silnikowy?</h3>
+              <p class="blog-excerpt">
+                Dowiedz się, jak często należy wymieniać olej silnikowy w swoim
+                samochodzie...
+              </p>
+              <a href="#" class="read-more">Czytaj więcej →</a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div
+              class="blog-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="blog-content">
+              <div class="blog-date">05.01.2024</div>
+              <h3 class="blog-title">Przygotowanie samochodu do zimy</h3>
+              <p class="blog-excerpt">
+                Kompleksowy przewodnik przygotowania samochodu do sezonu
+                zimowego...
+              </p>
+              <a href="#" class="read-more">Czytaj więcej →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Kontakt</h2>
+        <div class="contact-content">
+          <div class="contact-form">
+            <form>
+              <div class="form-group">
+                <label for="name">Imię i nazwisko</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+              <div class="form-group">
+                <label for="service">Rodzaj usługi</label>
+                <select id="service" name="service" required>
+                  <option value="">Wybierz usługę</option>
+                  <option value="naprawa">Naprawa mechaniczna</option>
+                  <option value="opony">Wymiana opon</option>
+                  <option value="klimatyzacja">Serwis klimatyzacji</option>
+                  <option value="diagnostyka">Diagnostyka komputerowa</option>
+                  <option value="olej">Wymiana oleju</option>
+                  <option value="elektryka">Serwis elektryczny</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Opis problemu</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Wyślij zapytanie</button>
+            </form>
+          </div>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Adres</h4>
+                <p>ul. Mechaniczna 25<br />00-002 Warszawa</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Telefon</h4>
+                <p>+48 123 456 789</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Godziny otwarcia</h4>
+                <p>Pon-Pt: 8:00 - 18:00<br />Sob: 8:00 - 14:00</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p>kontakt@autofix.pl</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Potrzebujesz pomocy?</h2>
+        <p>Zadzwoń do nas już teraz!</p>
+        <div class="cta-phone">+48 123 456 789</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2024 AutoFix - Profesjonalny Warsztat Samochodowy. Wszystkie
+          prawa zastrzeżone.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Form submission
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Dziękujemy za zapytanie! Skontaktujemy się z Tobą wkrótce.");
+        this.reset();
+      });
+    </script>
+  </body>
+</html>

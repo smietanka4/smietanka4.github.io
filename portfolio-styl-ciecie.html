@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Styl & Cięcie - Profesjonalny Salon Fryzjerski | Rezerwacje online
+    </title>
+    <meta
+      name="description"
+      content="Styl & Cięcie - profesjonalny salon fryzjerski. Rezerwacje online, portfolio fryzur, cennik. Umów się na wizytę już dziś!"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #fafafa;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: "Poppins", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #fce7f3;
+        transform: translateY(-2px);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80");
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+        margin-top: 70px;
+      }
+
+      .hero-content h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        animation: fadeInUp 1s ease;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        animation: fadeInUp 1s ease 0.2s both;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+        color: white;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        animation: fadeInUp 1s ease 0.4s both;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+      }
+
+      /* Services Section */
+      .services {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .section-title {
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #1f2937;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        border-color: #ec4899;
+      }
+
+      .service-card i {
+        font-size: 3rem;
+        color: #ec4899;
+        margin-bottom: 1rem;
+      }
+
+      .service-card h3 {
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 1rem;
+        color: #1f2937;
+      }
+
+      .service-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ec4899;
+        margin-top: 1rem;
+      }
+
+      /* Portfolio Section */
+      .portfolio {
+        padding: 5rem 0;
+        background: #f9fafb;
+      }
+
+      .portfolio-filters {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        background: white;
+        border: 2px solid #ec4899;
+        color: #ec4899;
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: #ec4899;
+        color: white;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .portfolio-item {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .portfolio-image {
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .portfolio-text {
+        padding: 1.5rem;
+      }
+
+      .portfolio-text h4 {
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 0.5rem;
+        color: #1f2937;
+      }
+
+      .portfolio-category {
+        color: #ec4899;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      /* Booking Section */
+      .booking {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .booking-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .booking-form {
+        background: #f9fafb;
+        padding: 2rem;
+        border-radius: 15px;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #1f2937;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #ec4899;
+      }
+
+      .booking-btn {
+        background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      .booking-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+      }
+
+      .booking-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .booking-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .booking-item i {
+        font-size: 1.5rem;
+        color: #ec4899;
+        width: 40px;
+      }
+
+      /* Reviews Section */
+      .reviews {
+        padding: 5rem 0;
+        background: #f9fafb;
+      }
+
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .review-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .review-stars {
+        color: #fbbf24;
+        margin-bottom: 1rem;
+      }
+
+      .review-text {
+        font-style: italic;
+        margin-bottom: 1rem;
+        color: #4b5563;
+      }
+
+      .review-author {
+        font-weight: 600;
+        color: #1f2937;
+      }
+
+      /* Blog Section */
+      .blog {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .blog-card {
+        background: #f9fafb;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .blog-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .blog-content {
+        padding: 1.5rem;
+      }
+
+      .blog-date {
+        color: #6b7280;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .blog-title {
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 1rem;
+        color: #1f2937;
+      }
+
+      .blog-excerpt {
+        color: #6b7280;
+        margin-bottom: 1rem;
+      }
+
+      .read-more {
+        color: #ec4899;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 5rem 0;
+        background: #f9fafb;
+      }
+
+      .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .contact-item i {
+        font-size: 1.5rem;
+        color: #ec4899;
+        width: 40px;
+      }
+
+      /* Footer */
+      footer {
+        background: #1f2937;
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .booking-content,
+        .contact-content {
+          grid-template-columns: 1fr;
+        }
+
+        .services-grid,
+        .portfolio-grid,
+        .reviews-grid,
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .portfolio-filters {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">Styl & Cięcie</div>
+          <ul class="nav-links">
+            <li><a href="#home">Strona główna</a></li>
+            <li><a href="#services">Usługi</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#booking">Rezerwacje</a></li>
+            <li><a href="#reviews">Opinie</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Styl & Cięcie</h1>
+          <p>Profesjonalny salon fryzjerski z rezerwacjami online</p>
+          <a href="#booking" class="cta-button">Zarezerwuj wizytę</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title">Nasze Usługi</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-cut"></i>
+            <h3>Strzyżenie Damskie</h3>
+            <p>Profesjonalne strzyżenie damskie z myciem i stylizacją</p>
+            <div class="service-price">80 zł</div>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-male"></i>
+            <h3>Strzyżenie Męskie</h3>
+            <p>Klasyczne i nowoczesne strzyżenia męskie</p>
+            <div class="service-price">50 zł</div>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-palette"></i>
+            <h3>Koloryzacja</h3>
+            <p>Profesjonalna koloryzacja z użyciem najlepszych farb</p>
+            <div class="service-price">150 zł</div>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-child"></i>
+            <h3>Strzyżenie Dziecięce</h3>
+            <p>Delikatne strzyżenie dla najmłodszych klientów</p>
+            <div class="service-price">40 zł</div>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-magic"></i>
+            <h3>Stylizacja Okolicznościowa</h3>
+            <p>Eleganckie fryzury na specjalne okazje</p>
+            <div class="service-price">120 zł</div>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-spa"></i>
+            <h3>Pielęgnacja Włosów</h3>
+            <p>Zabiegi regenerujące i odżywcze</p>
+            <div class="service-price">100 zł</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <h2 class="section-title">Portfolio Fryzur</h2>
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">Wszystkie</button>
+          <button class="filter-btn" data-filter="damskie">Damskie</button>
+          <button class="filter-btn" data-filter="meskie">Męskie</button>
+          <button class="filter-btn" data-filter="dzieciece">Dziecięce</button>
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-item" data-category="damskie">
+            <div
+              class="portfolio-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="portfolio-text">
+              <h4>Elegancka fryzura ślubna</h4>
+              <div class="portfolio-category">Damskie</div>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="meskie">
+            <div
+              class="portfolio-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="portfolio-text">
+              <h4>Nowoczesne strzyżenie męskie</h4>
+              <div class="portfolio-category">Męskie</div>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="dzieciece">
+            <div
+              class="portfolio-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="portfolio-text">
+              <h4>Urocze strzyżenie dziecięce</h4>
+              <div class="portfolio-category">Dziecięce</div>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="damskie">
+            <div
+              class="portfolio-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="portfolio-text">
+              <h4>Koloryzacja balayage</h4>
+              <div class="portfolio-category">Damskie</div>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="meskie">
+            <div
+              class="portfolio-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="portfolio-text">
+              <h4>Klasyczne strzyżenie</h4>
+              <div class="portfolio-category">Męskie</div>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="damskie">
+            <div
+              class="portfolio-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="portfolio-text">
+              <h4>Fryzura na co dzień</h4>
+              <div class="portfolio-category">Damskie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+      <div class="container">
+        <h2 class="section-title">Rezerwacja Online</h2>
+        <div class="booking-content">
+          <div class="booking-form">
+            <form id="bookingForm">
+              <div class="form-group">
+                <label for="name">Imię i nazwisko</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+              <div class="form-group">
+                <label for="service">Usługa</label>
+                <select id="service" name="service" required>
+                  <option value="">Wybierz usługę</option>
+                  <option value="strzyzenie-damskie">
+                    Strzyżenie damskie - 80 zł
+                  </option>
+                  <option value="strzyzenie-meskie">
+                    Strzyżenie męskie - 50 zł
+                  </option>
+                  <option value="koloryzacja">Koloryzacja - 150 zł</option>
+                  <option value="strzyzenie-dzieciece">
+                    Strzyżenie dziecięce - 40 zł
+                  </option>
+                  <option value="stylizacja">
+                    Stylizacja okolicznościowa - 120 zł
+                  </option>
+                  <option value="pielegnacja">
+                    Pielęgnacja włosów - 100 zł
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="date">Data</label>
+                <input type="date" id="date" name="date" required />
+              </div>
+              <div class="form-group">
+                <label for="time">Godzina</label>
+                <select id="time" name="time" required>
+                  <option value="">Wybierz godzinę</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                </select>
+              </div>
+              <button type="submit" class="booking-btn">
+                Zarezerwuj wizytę
+              </button>
+            </form>
+          </div>
+          <div class="booking-info">
+            <div class="booking-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Godziny otwarcia</h4>
+                <p>Pon-Pt: 9:00 - 19:00<br />Sob: 9:00 - 16:00</p>
+              </div>
+            </div>
+            <div class="booking-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Telefon</h4>
+                <p>+48 123 456 789</p>
+              </div>
+            </div>
+            <div class="booking-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Adres</h4>
+                <p>ul. Fryzjerska 10<br />00-003 Warszawa</p>
+              </div>
+            </div>
+            <div class="booking-item">
+              <i class="fas fa-info-circle"></i>
+              <div>
+                <h4>Informacje</h4>
+                <p>
+                  Rezerwacje online są dostępne 24/7. Potwierdzenie otrzymasz
+                  SMS-em.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <h2 class="section-title">Opinie Klientów</h2>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="review-text">
+              "Świetny salon! Fryzjerka bardzo profesjonalna, a fryzura wyszła
+              dokładnie tak jak chciałam. Polecam!"
+            </div>
+            <div class="review-author">- Maria Kowalska</div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="review-text">
+              "Rezerwacja online działa świetnie! Szybko i wygodnie. Fryzura
+              idealna, atmosfera miła."
+            </div>
+            <div class="review-author">- Anna Nowak</div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="review-text">
+              "Jestem klientką od 2 lat i zawsze jestem zadowolona.
+              Profesjonalizm na najwyższym poziomie!"
+            </div>
+            <div class="review-author">- Katarzyna Wiśniewska</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+      <div class="container">
+        <h2 class="section-title">Blog - Porady Fryzjerskie</h2>
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div
+              class="blog-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="blog-content">
+              <div class="blog-date">20.01.2024</div>
+              <h3 class="blog-title">Jak dbać o włosy zimą?</h3>
+              <p class="blog-excerpt">
+                Praktyczne porady dotyczące pielęgnacji włosów w okresie
+                zimowym...
+              </p>
+              <a href="#" class="read-more">Czytaj więcej →</a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div
+              class="blog-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="blog-content">
+              <div class="blog-date">15.01.2024</div>
+              <h3 class="blog-title">Trendy fryzur 2024</h3>
+              <p class="blog-excerpt">
+                Poznaj najnowsze trendy fryzur, które będą modne w 2024 roku...
+              </p>
+              <a href="#" class="read-more">Czytaj więcej →</a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div
+              class="blog-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+              "
+            ></div>
+            <div class="blog-content">
+              <div class="blog-date">10.01.2024</div>
+              <h3 class="blog-title">
+                Koloryzacja balayage - co warto wiedzieć?
+              </h3>
+              <p class="blog-excerpt">
+                Wszystko o popularnej technice koloryzacji balayage...
+              </p>
+              <a href="#" class="read-more">Czytaj więcej →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Kontakt</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Adres</h4>
+                <p>ul. Fryzjerska 10<br />00-003 Warszawa</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Telefon</h4>
+                <p>+48 123 456 789</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p>kontakt@stylciecie.pl</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Godziny otwarcia</h4>
+                <p>Pon-Pt: 9:00 - 19:00<br />Sob: 9:00 - 16:00</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-certificate"></i>
+              <div>
+                <h4>Certyfikaty</h4>
+                <p>Certyfikowany stylista fryzur<br />10 lat doświadczenia</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-shield-alt"></i>
+              <div>
+                <h4>Bezpieczeństwo</h4>
+                <p>Strona zabezpieczona HTTPS<br />Dane chronione RODO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2024 Styl & Cięcie - Profesjonalny Salon Fryzjerski. Wszystkie
+          prawa zastrzeżone.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Portfolio filters
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          // Add active class to clicked button
+          btn.classList.add("active");
+
+          const filter = btn.getAttribute("data-filter");
+
+          portfolioItems.forEach((item) => {
+            if (
+              filter === "all" ||
+              item.getAttribute("data-category") === filter
+            ) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Booking form
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const bookingData = {
+            name: formData.get("name"),
+            phone: formData.get("phone"),
+            service: formData.get("service"),
+            date: formData.get("date"),
+            time: formData.get("time"),
+          };
+
+          // Simulate booking confirmation
+          alert(
+            `Dziękujemy za rezerwację!\n\nSzczegóły:\nImię: ${bookingData.name}\nUsługa: ${bookingData.service}\nData: ${bookingData.date}\nGodzina: ${bookingData.time}\n\nPotwierdzenie otrzymasz SMS-em.`
+          );
+
+          this.reset();
+        });
+
+      // Set minimum date to today
+      const dateInput = document.getElementById("date");
+      const today = new Date().toISOString().split("T")[0];
+      dateInput.setAttribute("min", today);
+    </script>
+  </body>
+</html>
