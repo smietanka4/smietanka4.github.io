@@ -1,17 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contactForm");
   const result = document.getElementById("contactResult");
+
   if (form) {
     form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      result.textContent =
-        "Dziękuję za wiadomość! Skontaktuję się z Tobą wkrótce.";
-      form.reset();
+      e.preventDefault(); // Zatrzymujemy domyślne zachowanie
 
-      // Automatyczne ukrycie komunikatu po 5 sekundach
-      setTimeout(() => {
-        result.textContent = "";
-      }, 5000);
+      // Pokaż komunikat o wysyłaniu
+      result.textContent = "Wysyłam wiadomość...";
+      result.className = "loading";
+
+      // Pobierz dane z formularza
+      const formData = new FormData(form);
+
+      // Wyślij dane do Formspree przez AJAX
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            // Sukces
+            result.textContent =
+              "Dziękuję za wiadomość! Skontaktuję się z Tobą wkrótce.";
+            result.className = "success";
+            form.reset();
+          } else {
+            // Błąd
+            result.textContent =
+              "Wystąpił błąd podczas wysyłania. Spróbuj ponownie.";
+            result.className = "error";
+          }
+        })
+        .catch((error) => {
+          // Błąd sieci
+          result.textContent = "Wystąpił błąd połączenia. Spróbuj ponownie.";
+          result.className = "error";
+          console.error("Error:", error);
+        })
+        .finally(() => {
+          // Automatyczne ukrycie komunikatu po 5 sekundach
+          setTimeout(() => {
+            result.textContent = "";
+            result.className = "";
+          }, 5000);
+        });
     });
   }
 

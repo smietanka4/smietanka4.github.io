@@ -656,17 +656,33 @@ form button i {
 
 #contactResult {
   margin-top: 1rem;
-  color: #059669;
   font-weight: bold;
   font-size: 1.1rem;
   text-align: center;
   padding: 1rem;
-  background: rgba(5, 150, 105, 0.1);
   border-radius: 12px;
-  border: 1px solid rgba(5, 150, 105, 0.2);
   min-height: 0;
   opacity: 0;
   transition: all 0.3s ease;
+  border: 1px solid;
+}
+
+#contactResult.success {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.1);
+  border-color: rgba(5, 150, 105, 0.2);
+}
+
+#contactResult.error {
+  color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+  border-color: rgba(220, 53, 69, 0.2);
+}
+
+#contactResult.loading {
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+  border-color: rgba(0, 123, 255, 0.2);
 }
 
 #contactResult:not(:empty) {
