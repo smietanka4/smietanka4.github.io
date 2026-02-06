@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 export default function ValentinePage() {
   const [revealed, setRevealed] = useState(false);
   const [yesClicked, setYesClicked] = useState(false);
+  const [runningAway, setRunningAway] = useState(false);
   const [noPosition, setNoPosition] = useState({ top: "50%", left: "60%" }); // Initial position to right of Yes
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -13,6 +14,7 @@ export default function ValentinePage() {
   };
 
   const handleNoInteraction = () => {
+    setRunningAway(true);
     if (containerRef.current) {
       const containerRect = containerRef.current.getBoundingClientRect();
       const padding = 50; // Keep away from edges
@@ -97,7 +99,7 @@ export default function ValentinePage() {
             <button className="btn yes-btn" onClick={handleYesClick}>TAK</button>
             <button 
                 className="btn no-btn" 
-                style={{ top: noPosition.top, left: noPosition.left, position: revealed ? 'fixed' : 'static' }}
+                style={{ top: noPosition.top, left: noPosition.left, position: runningAway ? 'fixed' : 'static' }}
                 onMouseEnter={handleNoInteraction}
                 onClick={handleNoInteraction}
             >
